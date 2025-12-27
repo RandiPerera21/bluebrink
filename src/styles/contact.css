@@ -1,0 +1,111 @@
+/* CONTACT MAIN LAYOUT */
+.contact-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  /* CONTACT FORM */
+  .contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+  
+  .contact-form h2 {
+    margin-bottom: 0.3rem;
+    color: #1e3a8a;
+  }
+  
+  .form-subtitle {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 0.9rem;
+  }
+  
+  /* FORM GROUPING */
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+    color: #475569;
+  }
+  
+  /* INPUTS */
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1px solid #cbd5f5;
+    font-size: 0.95rem;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+  }
+  
+  /* BUTTON */
+  .contact-form button {
+    margin-top: 0.5rem;
+    background: #2563eb;
+    color: white;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .contact-form button:hover {
+    background: #1e40af;
+  }
+  
+  /* CONTACT INFO */
+  .contact-info {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  /* MEET AGENTS */
+  .meet-agents {
+    margin-top: 3rem;
+  }
+  
+  .meet-agents h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .meet-agents p {
+    margin-bottom: 1.5rem;
+    color: #475569;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .contact-main {
+      grid-template-columns: 1fr;
+    }
+  
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+  
