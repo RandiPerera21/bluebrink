@@ -242,3 +242,75 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* SEARCH SECTION BACKGROUND */
+.search-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, #faf7ff, #ffffff);
+  display: flex;
+  justify-content: center;
+}
+
+/* SEARCH CARD */
+.search-card {
+  width: 100%;
+  max-width: 1100px;
+  background: white;
+  padding: 2.2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.3rem;
+}
+
+/* INPUTS */
+.search-card input,
+.search-card select {
+  padding: 0.95rem;
+  border-radius: 10px;
+  border: 1px solid #d1d1d1;
+  font-size: 0.95rem;
+}
+
+.search-card input:focus,
+.search-card select:focus {
+  outline: none;
+  border-color: #6b4a8f;
+}
+
+/* LABEL */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+  color: #555;
+}
+
+/* SEARCH BUTTON */
+.search-btn {
+  background: #6b4a8f;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.search-btn:hover {
+  background: #5a3c78;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .search-card {
+    grid-template-columns: 1fr;
+  }
+}
