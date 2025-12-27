@@ -1,42 +1,72 @@
-import { useParams } from "react-router-dom";
-import {useState} from "react";
-import data from "../data/properties.json";
+import { useParams, Link } from "react-router-dom";
+import "../styles/property.css";
+import { useState } from "react";
+import properties from "../data/properties.json";
 
 export default function PropertyPage() {
   const { id } = useParams();
-  const property = properties.find(p => p.id === Number(id));
-  const [activeTab, setActiveTab] = useState("description");
-
-  if (!property) return <p>Property not found</p>
+  const property = properties.find(p => p.id === id || p.id === Number(id));
+  if (!property) {
+    return <h2 style={{ textAlign: "center" }}>Property not found</h2>;
+  }  
+  const [tab, setTab] = useState("description");
 
   return (
     <div className="property-page">
-      <h1>{property.location}</h1>
-      <p className="price">£{property.price.toLocaleString()}</p>
-      <img
-        src={`/images/properties/p${property.id}/1.jpg`}
-        alt="Property"
-        className="hero-img"
-      />
 
-    <div className="tabs">
+      {/* BACK */}
+      <Link to="/search" className="back-btn">
+        ← Back to Search
+      </Link>
+
+      {/* TITLE */}
+      <h1 className="property-title">{property.type}</h1>
+
+      {/* IMAGES */}
+      <div className="gallery">
+        <img
+          className="main-img"
+          src={`/images/properties/p${property.id}/1.jpg`}
+          alt=""
+        />
+
+        <div className="thumbs">
+          {[2, 3, 4, 5].map(i => (
+            <img
+              key={i}
+              src={`/images/properties/p${property.id}/${i}.jpg`}
+              alt=""
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* DETAILS */}
+      <div className="details-box">
+        <div>Price <span>Rs. {property.price} million</span></div>
+        <div>Bedrooms <span>{property.bedrooms}</span></div>
+        <div>Bathrooms <span>{property.bathrooms}</span></div>
+        <div>Area <span>{property.area}</span></div>
+        <div>Location <span>{property.location}</span></div>
+      </div>
+
+      {/* TABS */}
+      <div className="tabs">
         <button
-          className={activeTab === "description" ? "active" : ""}
-          onClick={() => setActiveTab("description")}
+          className={tab === "description" ? "active" : ""}
+          onClick={() => setTab("description")}
         >
           Description
         </button>
-
         <button
-          className={activeTab === "floor" ? "active" : ""}
-          onClick={() => setActiveTab("floor")}
+          className={tab === "floor" ? "active" : ""}
+          onClick={() => setTab("floor")}
         >
           Floor Plan
         </button>
-
         <button
-          className={activeTab === "map" ? "active" : ""}
-          onClick={() => setActiveTab("map")}
+          className={tab === "map" ? "active" : ""}
+          onClick={() => setTab("map")}
         >
           Map
         </button>
@@ -44,41 +74,28 @@ export default function PropertyPage() {
 
       {/* TAB CONTENT */}
       <div className="tab-content">
-        {activeTab === "description" && (
-          <>
-            <h3>Property Details</h3>
-            <p>{property.longDesc}</p>
-            <p>
-              <strong>Bedrooms:</strong> {property.bedrooms}
-            </p>
-            <p>
-              <strong>Type:</strong> {property.type}
-            </p>
-          </>
-        )}
+        {tab === "description" && <p>{property.description}</p>}
 
-        {activeTab === "floor" && (
+        {tab === "floor" && (
           <img
-            src={`/images/properties/p${property.id}/${property.floorPlan}`}
-            alt="Floor Plan"
             className="floor-plan"
+            src={`/images/properties/p${property.id}/floor.jpg`}
+            alt="Floor Plan"
           />
         )}
 
-        {activeTab === "map" && (
+        {tab === "map" && (
           <iframe
+            title="map"
             src={property.map}
             width="100%"
             height="350"
             style={{ border: 0 }}
-            allowFullScreen=""
             loading="lazy"
-            title="Map"
           ></iframe>
         )}
       </div>
+
     </div>
   );
 }
-
-      
