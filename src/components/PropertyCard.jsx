@@ -6,19 +6,35 @@ export default function PropertyCard({ property }) {
   const { addFavourite } = useContext(FavouritesContext);
 
   return (
-    <div className="card">
-      <img src={`/images/properties/p${property.id}/1.jpg`} alt="" />
+    <div className="property-card">
+      <img
+        src={`/images/properties/p${property.id}/1.jpg`}
+        alt={property.location}
+      />
 
-      <div className="card-body">
-        <h3>£{property.price.toLocaleString()}</h3>
-        <p>{property.shortDesc}</p>
-        <p>{property.bedrooms} bedrooms • {property.postcode}</p>
+      <div className="property-body">
+        <p className="price">Rs. {property.price} millions</p>
 
-        <div className="card-actions">
-          <Link to={`/property/${property.id}`}>View Details</Link>
-          <button onClick={() => addFavourite(property)}>❤</button>
+        {/* SAFE DESCRIPTION */}
+        <p className="short-desc">
+          {(property.description || "Beautiful modern property with great features.")
+            .slice(0, 80)}...
+        </p>
+
+        <div className="property-actions">
+          <Link to={`/property/${property.id}`} className="details-btn">
+            VIEW DETAILS
+          </Link>
+
+          <button
+            className="fav-btn"
+            onClick={() => addFavourite(property)}
+          >
+            ♡
+          </button>
         </div>
       </div>
     </div>
+    
   );
 }
