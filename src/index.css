@@ -203,3 +203,42 @@ body {
   font-size: 0.9rem;
 }
 
+/* CONTACT PAGE LAYOUT */
+.contact-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.contact-info {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.contact-info h4 {
+  margin-top: 1rem;
+}
+
+/* MEET AGENTS */
+.meet-agents {
+  margin-top: 3rem;
+}
+
+.meet-agents h2 {
+  margin-bottom: 0.5rem;
+}
+
+.meet-agents p {
+  margin-bottom: 1.5rem;
+  color: #475569;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-main {
+    grid-template-columns: 1fr;
+  }
+}
