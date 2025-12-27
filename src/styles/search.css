@@ -1,45 +1,235 @@
-.search-section {
-    padding: 4rem 2rem;
-    background: linear-gradient(180deg, #faf7ff, #ffffff);
-    display: flex;
-    justify-content: center;
+.search-page {
+  padding: 2rem;
+  background: #faf7ff;
+}
+
+/* TITLE */
+.search-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #6b4a8f;
+  margin-bottom: 2rem;
+}
+
+/* SEARCH FORM */
+.search-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.search-form input,
+.search-form select,
+.search-form button {
+  height: 46px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 0 0.8rem;
+}
+
+.search-form button {
+  background: #6b4a8f;
+  color: white;
+  font-weight: 600;
+  border: none;
+}
+
+/* MAIN LAYOUT */
+.search-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+
+/* PROPERTY GRID */
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* PROPERTY CARD */
+.property-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.property-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.property-body {
+  padding: 1rem;
+}
+
+.price {
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.property-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.details-btn {
+  border: 1px solid #6b4a8f;
+  background: transparent;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+}
+
+/* FAVOURITES */
+.favourites-box {
+  background: white;
+  padding: 1rem;
+  border-radius: 14px;
+}
+
+.fav-card {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.fav-card img {
+  width: 60px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.clear-btn {
+  width: 100%;
+  margin-bottom: 1rem;
+  background: #eee;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .search-layout {
+    grid-template-columns: 1fr;
   }
-  
-  .search-card {
-    width: 100%;
-    max-width: 1100px;
-    background: white;
-    padding: 2.2rem;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.3rem;
+
+  .search-form {
+    grid-template-columns: 1fr;
   }
-  
-  .search-card input,
-  .search-card select {
-    padding: 0.95rem;
-    border-radius: 10px;
-    border: 1px solid #d1d1d1;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .search-btn {
-    background: #6b4a8f;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-weight: 600;
-  }
-  
-  @media (max-width: 900px) {
-    .search-card {
-      grid-template-columns: 1fr;
-    }
-  }
-  
+}
+/* PROPERTY CARD */
+.short-desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.4rem 0;
+}
+
+.property-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-btn {
+  border: 1px solid #6b4a8f;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #6b4a8f;
+  font-weight: 600;
+}
+
+.fav-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #6b4a8f;
+}
+
+/* PROPERTY PAGE */
+.property-page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 1rem;
+  background: #6b4a8f;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.property-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 1.5rem;
+}
+
+.main-img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+.thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+
+.thumbs img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* DETAILS */
+.details-box div {
+  display: flex;
+  justify-content: space-between;
+  background: #efe9ff;
+  padding: 0.7rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.tabs button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  border: none;
+  background: #e6e0ff;
+}
+
+.tabs .active {
+  background: #6b4a8f;
+  color: white;
+}
