@@ -5,34 +5,43 @@ export default function SearchForm({ onSearch }) {
   
       onSearch({
         type: f.type.value,
-        minPrice: Number(f.minPrice.value),
-        maxPrice: Number(f.maxPrice.value),
-        minBeds: Number(f.minBeds.value),
-        maxBeds: Number(f.maxBeds.value),
-        startDate: f.startDate.value,
-        endDate: f.endDate.value,
-        postcode: f.postcode.value
+        minPrice: f.minPrice.value,
+        maxPrice: f.maxPrice.value,
+        minBeds: f.minBeds.value,
+        maxBeds: f.maxBeds.value,
+        month: f.startDate.value,
+        year: f.endDate.value,
+        location: f.postcode.value
       });
     };
   
     return (
-      <form className="search-form" onSubmit={submit}>
-        <select name="type">
-          <option value="any">Any Type</option>
-          <option value="house">House</option>
-          <option value="flat">Flat</option>
-        </select>
+      <section className="search-section">
+        <form className="search-card" onSubmit={handleSubmit}>
+
+          <div className="form-group">
+            <label>Property Type</label>
+            <select name="type">
+              <option value="any">Any</option>
+              <option value="house">House</option>
+              <option value="flat">Flat</option>
+            </select>
+          </div>
   
-        <input name="postcode" placeholder="Postcode (e.g. NW1)" />
-        <input name="minPrice" type="number" placeholder="Min £" />
-        <input name="maxPrice" type="number" placeholder="Max £" />
-        <input name="minBeds" type="number" placeholder="Min Beds" />
-        <input name="maxBeds" type="number" placeholder="Max Beds" />
-        <input name="startDate" type="date" />
-        <input name="endDate" type="date" />
+          <input name="minPrice" placeholder="Min Price in Millions (Rs.)" />
+          <input name="maxPrice" placeholder="Max Price in Millions (Rs.)" />
+          
+          <input name="minBeds" placeholder="Min Bedrooms" />
+          <input name="maxBeds" placeholder="Max Bedrooms" />
+
+          <input name="month" placeholder="Added Month (Ex: February)" />
+          <input name="year" placeholder="Added Year (Ex: 2020)" />
+
+          <input name="location" placeholder="Location" />
   
-        <button>Search</button>
+          <button className="search-btn">Search</button>
       </form>
+    </section>
     );
   }
   
