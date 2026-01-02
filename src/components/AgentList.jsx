@@ -6,33 +6,33 @@ const agents = [
     id: 1,
     name: "Sarah Johnson",
     role: "Senior Sales Agent",
-    email: "sarah@homeharbor.co.uk",
+    email: "sarah@bluebrink.co.lk",
     phone: "+44 20 1234 5671",
-    image: "/images/agents/agent1.jpg"
+    image: "/images/agents/agent1.webp"
   },
   {
     id: 2,
     name: "Michael Brown",
     role: "Lettings Specialist",
-    email: "michael@homeharbor.co.uk",
+    email: "michael@bluebrink.co.lk",
     phone: "+44 20 1234 5672",
-    image: "/images/agents/agent2.jpg"
+    image: "/images/agents/agent2.webp"
   },
   {
     id: 3,
     name: "Emma Wilson",
     role: "Property Consultant",
-    email: "emma@homeharbor.co.uk",
+    email: "emma@bluebrink.co.lk",
     phone: "+44 20 1234 5673",
-    image: "/images/agents/agent3.jpg"
+    image: "/images/agents/agent3.png"
   },
   {
     id: 4,
     name: "David Lee",
     role: "Investment Advisor",
-    email: "david@homeharbor.co.uk",
+    email: "david@bluebrink.co.lk",
     phone: "+44 20 1234 5674",
-    image: "/images/agents/agent4.jpg"
+    image: "/images/agents/agent4.png"
   }
 ];
 
