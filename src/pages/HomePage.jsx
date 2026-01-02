@@ -7,8 +7,8 @@ export default function HomePage() {
       {/* HERO */}
       <section className="home-hero">
         <div className="hero-content">
-          <h1>Discover Your Next Home</h1>
-          <p>Trusted estate agents helping you buy, sell and rent properties</p>
+          <h1>Where Your <br/><span>Dream Home Begins</span></h1>
+          <p>We connect you with trusted agents and modern houses and flats across Sri Lanka.</p>
 
           <div className="hero-buttons">
             <Link to="/search" className="cta">
@@ -22,22 +22,27 @@ export default function HomePage() {
 
         {/*Image*/}
         <div className="hero-image">
-          <img src="/images/home-hero.png" alt="Modern home" />
+          <img src="/images/home-hero.jpg" alt="Modern home" />
         </div>
       </section>
 
       {/* SERVICES */}
-      <section className="services">
-        <div>
-          <h3>🏠 Buy</h3>
+      <section className="services-section">
+        <div className="service-container">
+          <div className="service-card">
+          <div className="service-icon">🏡</div>
+          <h3>Buy</h3>
           <p>Find your dream home at the best price</p>
+          </div>
         </div>
-        <div>
-          <h3>🔑 Rent</h3>
-          <p>Quality rental properties across the UK</p>
+        <div className="service-card">
+        <div className="service-icon">🔑</div>
+          <h3>Rent</h3>
+          <p>Quality rental properties across the Sri Lanka</p>
         </div>
-        <div>
-          <h3>📈 Invest</h3>
+        <div className="service-card">
+        <div className="service-icon">📈</div>
+          <h3>Invest</h3>
           <p>Expert advice for property investors</p>
         </div>
       </section>
