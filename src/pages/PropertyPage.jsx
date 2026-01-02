@@ -31,7 +31,7 @@ export default function PropertyPage() {
         />
 
         <div className="thumbs">
-          {[2, 3, 4, 5].map(i => (
+          {[2, 3, 4, 5, 6, 7].map(i => (
             <img
               key={i}
               src={`/images/properties/p${property.id}/${i}.jpg`}
@@ -74,12 +74,15 @@ export default function PropertyPage() {
 
       {/* TAB CONTENT */}
       <div className="tab-content">
-        {tab === "description" && <p>{property.description}</p>}
+      {tab === "description" && (
+        <p>{property.longDesc || "No description available."}</p>
+      )}
+
 
         {tab === "floor" && (
           <img
             className="floor-plan"
-            src={`/images/properties/p${property.id}/floor.jpg`}
+            src={`/images/properties/p${property.id}/${property.floorPlan}`}
             alt="Floor Plan"
           />
         )}
