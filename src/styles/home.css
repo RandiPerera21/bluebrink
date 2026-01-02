@@ -52,7 +52,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
   }
-
+  
   .service-card {
     background: white;
     padding: 2rem;
@@ -81,7 +81,7 @@
     line-height: 1.6;
     font-size:1rem;
   }
-  
+
   @media (max-width: 900px) {
     .home-hero {
       grid-template-columns: 1fr;
@@ -105,5 +105,4 @@
     background: #303ca5;
     color: white;
   }
-  
   
