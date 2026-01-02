@@ -2,6 +2,7 @@
     max-width: 1100px;
     margin: auto;
     padding: 2rem;
+    font-size: 1.1rem;
   }
   
   .price {
@@ -17,6 +18,8 @@
   .tabs {
     display: flex;
     gap: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
   }
   
   .tabs button {
@@ -25,6 +28,8 @@
     border-radius: 8px;
     border: none;
     background: #e5e7eb;
+    font-size: 1.1rem;
+    font-weight: bold;
   }
   
   .tabs button.active {
@@ -47,7 +52,7 @@
   .back-btn {
     display: inline-block;
     margin-bottom: 1rem;
-    background: #6b4a8f;
+    background: #113ea1;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 8px;
@@ -57,6 +62,7 @@
   .property-title {
     text-align: center;
     margin-bottom: 2rem;
+    color:#09245b;
   }
   
   /* GALLERY */
@@ -90,6 +96,8 @@
     padding: 0.7rem;
     border-radius: 8px;
     margin-bottom: 0.5rem;
+    font-weight: bold;
+    color:#113ea1;
   }
   
   /* TABS */
@@ -105,10 +113,11 @@
     border-radius: 20px;
     border: none;
     background: #e6e0ff;
+    color:#113ea1;
   }
   
   .tabs .active {
-    background: #6b4a8f;
+    background: #2563eb;
     color: white;
   }
   
