@@ -10,19 +10,23 @@
   }
   
   .hero-content h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
   }
   
   .hero-content p {
-    font-size: 1.1rem;
+    font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #555;
+    color: #1e1d1d;
+  }
+
+  .hero-content h1 span {
+    color: #0a2786;
   }
   
   .cta {
     display: inline-block;
-    background: #6b4a8f;
+    background: #303ca5;
     color: white;
     padding: 0.8rem 1.5rem;
     border-radius: 10px;
@@ -30,7 +34,7 @@
   }
   
   .cta:hover {
-    background: #5a3c78;
+    background: #303ca5;
   }
   
   .hero-image img {
@@ -39,18 +43,43 @@
   }
   
   /* SERVICES */
-  .services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
+  .services-section {
+    margin: 6rem 0;
   }
   
-  .services div {
+  .service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
     background: white;
-    padding: 1.5rem;
-    border-radius: 14px;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .service-card h3 {
+    color: #303ca5;
+    margin-bottom: 1rem;
+  }
+  
+  .service-card p {
+    color: #181818;
+    line-height: 1.6;
+    font-size:1rem;
   }
   
   @media (max-width: 900px) {
@@ -68,12 +97,12 @@
   
   .cta.secondary {
     background: transparent;
-    color: #6b4a8f;
-    border: 2px solid #6b4a8f;
+    color: #303ca5;
+    border: 2px solid #303ca5;
   }
   
   .cta.secondary:hover {
-    background: #6b4a8f;
+    background: #303ca5;
     color: white;
   }
   
