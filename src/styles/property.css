@@ -127,4 +127,22 @@
     margin: auto;
     display: block;
   }
+
+  .fav-btn {
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #9ca3af; 
+    transition: transform 0.2s, color 0.2s;
+  }
+  
+  .fav-btn:hover {
+    transform: scale(1.2);
+  }
+  
+  .fav-btn.active {
+    color: #2563eb; /* BLUE */
+  }
+  
   
