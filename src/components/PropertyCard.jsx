@@ -17,9 +17,9 @@ export default function PropertyCard({ property }) {
 
         {/* SAFE DESCRIPTION */}
         <p className="short-desc">
-          {(property.description || "Beautiful modern property with great features.")
-            .slice(0, 80)}...
+          {property.shortDesc}  
         </p>
+        
 
         <div className="property-actions">
           <Link to={`/property/${property.id}`} className="details-btn">
