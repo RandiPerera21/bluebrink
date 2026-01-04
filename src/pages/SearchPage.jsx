@@ -14,16 +14,25 @@ export default function SearchPage() {
       {/* TITLE */}
       <h1 className="search-title">Search Your Dream Home</h1>
 
-      {/* SEARCH FORM */}
-      <SearchForm onSearch={setFiltered} />
+      {/* SEARCH FORM - Pass properties array */}
+      <SearchForm onSearch={setFiltered} properties={properties} />
 
       {/* MAIN CONTENT */}
       <div className="search-layout">
 
         {/* PROPERTIES */}
         <div className="results-section">
-          <h2 className="section-heading">Search Results</h2>
-          <PropertyList properties={filtered} />
+          <h2 className="section-heading">
+            Search Results ({filtered.length} properties found)
+          </h2>
+          
+          {filtered.length === 0 ? (
+            <p style={{ textAlign: 'center', padding: '2rem' }}>
+              No properties match your search criteria. Try adjusting your filters.
+            </p>
+          ) : (
+            <PropertyList properties={filtered} />
+          )}
         </div>
 
         {/* FAVOURITES */}
