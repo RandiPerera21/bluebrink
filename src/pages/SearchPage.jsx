@@ -2,19 +2,62 @@ import "../styles/search.css";
 import SearchForm from "../components/SearchForm";
 import PropertyList from "../components/PropertyList";
 import Favourites from "../components/Favourites";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { FavouritesContext } from "../context/FavouritesContext";
 import properties from "../data/properties.json";
 
 export default function SearchPage() {
   const [filtered, setFiltered] = useState(properties);
+  const { removeFavourite } = useContext(FavouritesContext);
+  const [showRemoveZone, setShowRemoveZone] = useState(false);
+
+  // Handle drag over remove zone
+  const handleRemoveZoneDragOver = (e) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+  };
+
+  // Handle drop on remove zone
+  const handleRemoveZoneDrop = (e) => {
+    e.preventDefault();
+    const favouriteId = e.dataTransfer.getData("favouriteId");
+    if (favouriteId) {
+      removeFavourite(Number(favouriteId));
+    }
+    setShowRemoveZone(false);
+  };
+
+  // Show remove zone when dragging from favourites
+  const handlePageDragOver = (e) => {
+    const favouriteId = e.dataTransfer.getData("favouriteId");
+    if (favouriteId) {
+      setShowRemoveZone(true);
+    }
+  };
 
   return (
-    <div className="search-page">
+    <div 
+      className="search-page"
+      onDragOver={handlePageDragOver}
+      onDragEnd={() => setShowRemoveZone(false)}
+    >
+
+      {/* REMOVE ZONE (shown when dragging from favourites) */}
+      {showRemoveZone && (
+        <div 
+          className="remove-zone"
+          onDragOver={handleRemoveZoneDragOver}
+          onDrop={handleRemoveZoneDrop}
+          onDragLeave={() => setShowRemoveZone(false)}
+        >
+          🗑 Drop here to remove from favourites
+        </div>
+      )}
 
       {/* TITLE */}
       <h1 className="search-title">Search Your Dream Home</h1>
 
-      {/* SEARCH FORM - Pass properties array */}
+      {/* SEARCH FORM */}
       <SearchForm onSearch={setFiltered} properties={properties} />
 
       {/* MAIN CONTENT */}
