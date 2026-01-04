@@ -286,13 +286,13 @@
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: #f44336;
+  background: #e47c75;
   color: white;
   padding: 1.5rem 3rem;
   border-radius: 12px;
   font-size: 1.2rem;
   font-weight: bold;
-  box-shadow: 0 8px 24px rgba(244, 67, 54, 0.4);
+  box-shadow: 0 8px 24px rgba(244, 123, 114, 0.4);
   z-index: 1000;
   animation: slideUp 0.3s ease;
 }
@@ -309,7 +309,7 @@
 }
 
 .remove-zone:hover {
-  background: #d32f2f;
+  background: #ee7a7a;
   transform: translateX(-50%) scale(1.05);
 }
 
@@ -331,9 +331,7 @@
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
-/* ==========================================
-   RESPONSIVE DESIGN - MEDIA QUERIES (8%)
-   ========================================== */
+
 
 /* Large screens (default) - already styled above */
 
@@ -628,7 +626,7 @@
 }
 
 .remove-btn {
-  background: #f44336;
+  background: #f68981;
   color: white;
   border: none;
   padding: 0.4rem 0.8rem;
@@ -638,11 +636,11 @@
   transition: all 0.2s;
   align-self: flex-start;
 }
-
 .remove-btn:hover {
-  background: #d32f2f;
+  background: #ee9090;
   transform: scale(1.05);
 }
+
 
 /* Remove zone (appears when dragging from favourites) */
 .remove-zone {
@@ -650,7 +648,7 @@
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, #f44336, #d32f2f);
+  background: linear-gradient(135deg, #f49e98, #d32f2f);
   color: white;
   padding: 1.5rem 3rem;
   border-radius: 15px;
@@ -675,7 +673,7 @@
 }
 
 .remove-zone:hover {
-  background: linear-gradient(135deg, #d32f2f, #b71c1c);
+  background: linear-gradient(135deg, #e48585, #b71c1c);
   transform: translateX(-50%) scale(1.08);
   box-shadow: 0 15px 40px rgba(244, 67, 54, 0.6);
 }
@@ -696,7 +694,7 @@
 .clear-btn {
   width: 100%;
   padding: 0.8rem;
-  background: #ff5722;
+  background: #f09073;
   color: white;
   border: none;
   border-radius: 8px;
@@ -710,7 +708,7 @@
 }
 
 .clear-btn:hover {
-  background: #f4511e;
+  background: #e08c73;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
 }
