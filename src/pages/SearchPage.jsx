@@ -29,17 +29,22 @@ export default function SearchPage() {
 
   // Show remove zone when dragging from favourites
   const handlePageDragOver = (e) => {
-    const favouriteId = e.dataTransfer.getData("favouriteId");
+    const favouriteId = e.dataTransfer.types.includes("favouriteid");
     if (favouriteId) {
       setShowRemoveZone(true);
     }
+  };
+
+  const handlePageDragEnd = () => {
+    setShowRemoveZone(false);
   };
 
   return (
     <div 
       className="search-page"
       onDragOver={handlePageDragOver}
-      onDragEnd={() => setShowRemoveZone(false)}
+      onDragEnd={handlePageDragEnd}
+      onDrop={handlePageDragEnd}
     >
 
       {/* REMOVE ZONE (shown when dragging from favourites) */}
@@ -50,7 +55,7 @@ export default function SearchPage() {
           onDrop={handleRemoveZoneDrop}
           onDragLeave={() => setShowRemoveZone(false)}
         >
-          🗑 Drop here to remove from favourites
+          🗑️ Drop here to remove from favourites
         </div>
       )}
 
@@ -66,11 +71,11 @@ export default function SearchPage() {
         {/* PROPERTIES */}
         <div className="results-section">
           <h2 className="section-heading">
-            Search Results ({filtered.length} properties found)
+            Search Results ({filtered.length} {filtered.length === 1 ? 'property' : 'properties'} found)
           </h2>
           
           {filtered.length === 0 ? (
-            <p style={{ textAlign: 'center', padding: '2rem' }}>
+            <p style={{ textAlign: 'center', padding: '2rem', color: '#666' }}>
               No properties match your search criteria. Try adjusting your filters.
             </p>
           ) : (
