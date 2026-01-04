@@ -1,15 +1,16 @@
 import { useParams, Link } from "react-router-dom";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 import "../styles/property.css";
-import { useState } from "react";
 import properties from "../data/properties.json";
 
 export default function PropertyPage() {
   const { id } = useParams();
   const property = properties.find(p => p.id === id || p.id === Number(id));
+  
   if (!property) {
     return <h2 style={{ textAlign: "center" }}>Property not found</h2>;
-  }  
-  const [tab, setTab] = useState("description");
+  }
 
   return (
     <div className="property-page">
@@ -22,7 +23,7 @@ export default function PropertyPage() {
       {/* TITLE */}
       <h1 className="property-title">{property.type}</h1>
 
-      {/* IMAGES */}
+      {/* IMAGES GALLERY */}
       <div className="gallery">
         <img
           className="main-img"
@@ -41,7 +42,7 @@ export default function PropertyPage() {
         </div>
       </div>
 
-      {/* DETAILS */}
+      {/* PROPERTY DETAILS */}
       <div className="details-box">
         <div>Price <span>Rs. {property.price} million</span></div>
         <div>Bedrooms <span>{property.bedrooms}</span></div>
@@ -50,54 +51,49 @@ export default function PropertyPage() {
         <div>Location <span>{property.location}</span></div>
       </div>
 
-      {/* TABS */}
-      <div className="tabs">
-        <button
-          className={tab === "description" ? "active" : ""}
-          onClick={() => setTab("description")}
-        >
-          Description
-        </button>
-        <button
-          className={tab === "floor" ? "active" : ""}
-          onClick={() => setTab("floor")}
-        >
-          Floor Plan
-        </button>
-        <button
-          className={tab === "map" ? "active" : ""}
-          onClick={() => setTab("map")}
-        >
-          Map
-        </button>
-      </div>
+      {/* REACT TABS - Required by specification (7%) */}
+      <Tabs className="property-tabs">
+        <TabList>
+          <Tab>Description</Tab>
+          <Tab>Floor Plan</Tab>
+          <Tab>Map</Tab>
+        </TabList>
 
-      {/* TAB CONTENT */}
-      <div className="tab-content">
-      {tab === "description" && (
-        <p>{property.longDesc || "No description available."}</p>
-      )}
+        {/* Tab Panel 1: Long Description */}
+        <TabPanel>
+          <div className="tab-content">
+            <h3>Property Description</h3>
+            <p>{property.longDesc}</p>
+          </div>
+        </TabPanel>
 
+        {/* Tab Panel 2: Floor Plan */}
+        <TabPanel>
+          <div className="tab-content">
+            <h3>Floor Plan</h3>
+            <img
+              className="floor-plan"
+              src={`/images/properties/p${property.id}/${property.floorPlan}`}
+              alt="Floor Plan"
+            />
+          </div>
+        </TabPanel>
 
-        {tab === "floor" && (
-          <img
-            className="floor-plan"
-            src={`/images/properties/p${property.id}/${property.floorPlan}`}
-            alt="Floor Plan"
-          />
-        )}
-
-        {tab === "map" && (
-          <iframe
-            title="map"
-            src={property.map}
-            width="100%"
-            height="350"
-            style={{ border: 0 }}
-            loading="lazy"
-          ></iframe>
-        )}
-      </div>
+        {/* Tab Panel 3: Google Map */}
+        <TabPanel>
+          <div className="tab-content">
+            <h3>Location Map</h3>
+            <iframe
+              title="map"
+              src={property.map}
+              width="100%"
+              height="450"
+              style={{ border: 0, borderRadius: '8px' }}
+              loading="lazy"
+            ></iframe>
+          </div>
+        </TabPanel>
+      </Tabs>
 
     </div>
   );
