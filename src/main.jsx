@@ -1,13 +1,13 @@
 import "./index.css";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom"; // Changed from BrowserRouter
 import App from "./App";
 import { FavouritesProvider } from "./context/FavouritesContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <HashRouter>
     <FavouritesProvider>
       <App />
     </FavouritesProvider>
-  </BrowserRouter>
+  </HashRouter>
 );
