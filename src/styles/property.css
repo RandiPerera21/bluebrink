@@ -145,4 +145,15 @@
     color: #2563eb; /* BLUE */
   }
   
+  .remove-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #ab0000; /* red icon */
+    
+  }
+  
+  
+  
   
