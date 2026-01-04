@@ -49,20 +49,21 @@ export default function PropertyPage() {
         <div>Bathrooms <span>{property.bathrooms}</span></div>
         <div>Area <span>{property.area}</span></div>
         <div>Location <span>{property.location}</span></div>
+        <div>Postcode <span>{property.postcode}</span></div>
       </div>
 
       {/* REACT TABS - Required by specification (7%) */}
       <Tabs className="property-tabs">
         <TabList>
-          <Tab>Description</Tab>
+          <Tab>Details</Tab>
           <Tab>Floor Plan</Tab>
           <Tab>Map</Tab>
         </TabList>
 
-        {/* Tab Panel 1: Long Description */}
+        {/* Tab Panel 1: Details (Description) */}
         <TabPanel>
           <div className="tab-content">
-            <h3>Property Description</h3>
+            <h3>Property Details</h3>
             <p>{property.longDesc}</p>
           </div>
         </TabPanel>
