@@ -233,3 +233,287 @@
   background: #1354bd;
   color: white;
 }
+
+/* Drag and Drop Styles */
+
+/* Favourites box when dragging over */
+.favourites-box.drag-over {
+  background: #e3f2fd;
+  border: 3px dashed #2196f3;
+  box-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
+}
+
+/* Drop hint */
+.drop-hint {
+  background: #2196f3;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  text-align: center;
+  font-weight: bold;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Property card when dragging */
+.property-card[draggable="true"]:active {
+  opacity: 0.5;
+  cursor: grabbing !important;
+}
+
+/* Favourite card draggable */
+.fav-card[draggable="true"] {
+  cursor: grab;
+}
+
+.fav-card[draggable="true"]:active {
+  cursor: grabbing;
+  opacity: 0.6;
+}
+
+/* Remove zone (appears when dragging from favourites) */
+.remove-zone {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f44336;
+  color: white;
+  padding: 1.5rem 3rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 8px 24px rgba(244, 67, 54, 0.4);
+  z-index: 1000;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+
+.remove-zone:hover {
+  background: #d32f2f;
+  transform: translateX(-50%) scale(1.05);
+}
+
+/* Empty favourites message */
+.empty-message {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Add visual feedback when property card is being dragged */
+.property-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN - MEDIA QUERIES (8%)
+   ========================================== */
+
+/* Large screens (default) - already styled above */
+
+/* iPad Landscape and below (1024px) */
+@media (max-width: 1024px) {
+  .search-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .results-section {
+    width: 100%;
+    order: 1;
+  }
+
+  .favourites-section {
+    width: 100%;
+    order: 2;
+  }
+
+  .favourites-box {
+    position: static;
+    width: 100%;
+  }
+
+  .property-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-form {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Tablets and below (768px) */
+@media (max-width: 768px) {
+  .search-page {
+    padding: 1rem;
+  }
+
+  .search-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .property-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .property-card {
+    max-width: 100%;
+  }
+
+  .search-form {
+    padding: 1.5rem;
+  }
+
+  .favourites-box h3 {
+    font-size: 1.3rem;
+  }
+
+  .fav-card {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .fav-card img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .search-title {
+    font-size: 1.5rem;
+  }
+
+  .section-heading {
+    font-size: 1.2rem;
+  }
+
+  .property-card img {
+    height: 200px;
+  }
+
+  .property-body {
+    padding: 1rem;
+  }
+
+  .price {
+    font-size: 1.3rem;
+  }
+
+  .short-desc {
+    font-size: 0.9rem;
+  }
+
+  .property-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .details-btn,
+  .fav-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .search-form button {
+    width: 100%;
+  }
+
+  .clear-btn {
+    width: 100%;
+  }
+}
+
+/* ==========================================
+   PROPERTY PAGE RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .thumbs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .details-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .property-page {
+    padding: 1rem;
+  }
+
+  .property-title {
+    font-size: 1.8rem;
+  }
+
+  .thumbs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .details-box {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tabs button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .property-title {
+    font-size: 1.5rem;
+  }
+
+  .back-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .thumbs {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-content {
+    padding: 1rem;
+  }
+}
