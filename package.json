@@ -1,17 +1,29 @@
 {
-  "name": "estate-agent-app",
-  "homepage": "https://RandiPerera21.github.io/bluebrink",
+  "name": "bluebrink",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "rc-slider": "^10.x.x",
+    "react": "^18.3.1",
+    "react-datepicker": "^4.x.x",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.x.x",
+    "react-select": "^5.x.x",
+    "react-tabs": "^6.x.x"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.x.x",
+    "@testing-library/react": "^14.x.x",
+    "@vitejs/plugin-react": "^4.7.0",
+    "gh-pages": "^6.x.x",
+    "jest": "^29.x.x",
+    "vite": "^6.4.1"
   }
 }
