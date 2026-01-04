@@ -7,7 +7,7 @@ const agents = [
     name: "Sarah Johnson",
     role: "Senior Sales Agent",
     email: "sarah@bluebrink.co.lk",
-    phone: "+44 20 1234 5671",
+    phone: "+94 11 1234 567",
     image: "/images/agents/agent1.webp"
   },
   {
@@ -15,7 +15,7 @@ const agents = [
     name: "Michael Brown",
     role: "Lettings Specialist",
     email: "michael@bluebrink.co.lk",
-    phone: "+44 20 1234 5672",
+    phone: "+94 11 1234 567",
     image: "/images/agents/agent2.webp"
   },
   {
@@ -23,7 +23,7 @@ const agents = [
     name: "Emma Wilson",
     role: "Property Consultant",
     email: "emma@bluebrink.co.lk",
-    phone: "+44 20 1234 5673",
+    phone: "+94 11 1234 567",
     image: "/images/agents/agent3.png"
   },
   {
@@ -31,7 +31,7 @@ const agents = [
     name: "David Lee",
     role: "Investment Advisor",
     email: "david@bluebrink.co.lk",
-    phone: "+44 20 1234 5674",
+    phone: "+94 11 1234 567",
     image: "/images/agents/agent4.png"
   }
 ];
@@ -60,7 +60,7 @@ export default function AgentList() {
         ))}
       </div>
 
-      {/* AGENT CONTACT FORM MODAL */}
+      {/* Agent contact */}
       {selectedAgent && (
         <AgentContactForm
           agent={selectedAgent}
