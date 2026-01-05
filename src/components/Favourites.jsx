@@ -7,7 +7,7 @@ export default function Favourites() {
   
   const [isDragOver, setIsDragOver] = useState(false);
 
-  // Handle drag over (required to allow drop)
+  // Handle drag over
   const handleDragOver = (e) => {
     e.preventDefault();
     e.dataTransfer.dropEffect = "copy";
@@ -77,9 +77,10 @@ export default function Favourites() {
           onDragEnd={handleFavDragEnd}
         >
           <img
-            src={`/images/properties/p${p.id}/1.jpg`}
+            src={`${import.meta.env.BASE_URL}images/properties/p${p.id}/1.jpg`}
             alt={p.location}
           />
+
           <div className="fav-info">
             <p className="fav-price">Rs. {p.price}M</p>
             <p className="fav-location">{p.location}</p>
