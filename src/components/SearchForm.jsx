@@ -14,7 +14,7 @@ export default function SearchForm({ onSearch, properties }) {
     postcode: null
   });
 
-  // Options for React-Select
+  // Options
   const typeOptions = [
     { value: "any", label: "Any Type" },
     { value: "house", label: "House" },
@@ -39,12 +39,12 @@ export default function SearchForm({ onSearch, properties }) {
         }
       }
 
-      // Price range filter
+      // Price range
       if (property.price < criteria.priceRange[0] || property.price > criteria.priceRange[1]) {
         return false;
       }
 
-      // Bedroom range filter
+      // Bedroom range 
       if (property.bedrooms < criteria.bedroomRange[0] || property.bedrooms > criteria.bedroomRange[1]) {
         return false;
       }
@@ -57,7 +57,7 @@ export default function SearchForm({ onSearch, properties }) {
         }
       }
 
-      // Postcode filter
+      // Postcode
       if (criteria.postcode) {
         const searchPostcode = criteria.postcode.value.toLowerCase();
         const propertyPostcode = property.postcode.toLowerCase();
@@ -85,7 +85,7 @@ export default function SearchForm({ onSearch, properties }) {
 
   return (
     <div className="search-form-enhanced">
-      {/* Property Type - React Select */}
+      {/* Property type */}
       <div className="form-group">
         <label>Property Type</label>
         <Select
@@ -135,7 +135,7 @@ export default function SearchForm({ onSearch, properties }) {
         />
       </div>
 
-      {/* Postcode - React Select */}
+      {/* Postcode */}
       <div className="form-group">
         <label>Postcode Area</label>
         <Select
