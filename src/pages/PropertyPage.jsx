@@ -15,21 +15,21 @@ export default function PropertyPage() {
   return (
     <div className="property-page">
 
-      {/* BACK */}
+      {/* Back to search */}
       <Link to="/search" className="back-btn">
         ← Back to Search
       </Link>
 
-      {/* TITLE */}
+      {/* Titel */}
       <h1 className="property-title">{property.type}</h1>
 
-      {/* IMAGES GALLERY */}
+      {/* Images gallery */}
       <div className="gallery">
-        <img
-          className="main-img"
-          src={`/images/properties/p${property.id}/1.jpg`}
-          alt=""
-        />
+      <img
+        className="main-img"
+        src={`${import.meta.env.BASE_URL}images/properties/p${property.id}/1.jpg`}
+        alt=""
+      />
 
         <div className="thumbs">
           {[2, 3, 4, 5, 6, 7].map(i => (
@@ -42,7 +42,7 @@ export default function PropertyPage() {
         </div>
       </div>
 
-      {/* PROPERTY DETAILS */}
+      {/* Property Details */}
       <div className="details-box">
         <div>Price <span>Rs. {property.price} million</span></div>
         <div>Bedrooms <span>{property.bedrooms}</span></div>
@@ -52,7 +52,7 @@ export default function PropertyPage() {
         <div>Postcode <span>{property.postcode}</span></div>
       </div>
 
-      {/* REACT TABS - Required by specification (7%) */}
+      {/* React tabs */}
       <Tabs className="property-tabs">
         <TabList>
           <Tab>Details</Tab>
@@ -60,7 +60,7 @@ export default function PropertyPage() {
           <Tab>Map</Tab>
         </TabList>
 
-        {/* Tab Panel 1: Details (Description) */}
+        {/*Description */}
         <TabPanel>
           <div className="tab-content">
             <h3>Property Details</h3>
@@ -68,19 +68,19 @@ export default function PropertyPage() {
           </div>
         </TabPanel>
 
-        {/* Tab Panel 2: Floor Plan */}
+        {/* Floor Plan */}
         <TabPanel>
           <div className="tab-content">
             <h3>Floor Plan</h3>
             <img
               className="floor-plan"
-              src={`/images/properties/p${property.id}/${property.floorPlan}`}
+              src={`${import.meta.env.BASE_URL}images/properties/p${property.id}/${property.floorPlan}`}
               alt="Floor Plan"
             />
           </div>
         </TabPanel>
 
-        {/* Tab Panel 3: Google Map */}
+        {/* Google Map */}
         <TabPanel>
           <div className="tab-content">
             <h3>Location Map</h3>
