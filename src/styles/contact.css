@@ -1,4 +1,4 @@
-/* CONTACT MAIN LAYOUT */
+/* Contact main */
 .contact-main {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -6,7 +6,7 @@
     margin-bottom: 3rem;
   }
   
-  /* CONTACT FORM */
+  /* Contact form */
   .contact-form {
     background: white;
     padding: 2rem;
@@ -25,7 +25,7 @@
     font-size: 0.9rem;
   }
   
-  /* FORM GROUPING */
+  /* form */
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -44,7 +44,7 @@
     color: #475569;
   }
   
-  /* INPUTS */
+  /* inputs */
   .contact-form input,
   .contact-form textarea {
     padding: 0.8rem;
@@ -59,7 +59,7 @@
     border-color: #2563eb;
   }
   
-  /* BUTTON */
+  /* button */
   .contact-form button {
     margin-top: 0.5rem;
     background: #2563eb;
@@ -76,7 +76,7 @@
     background: #1e40af;
   }
   
-  /* CONTACT INFO */
+  /* contact info */
   .contact-info {
     background: white;
     padding: 1.5rem;
@@ -84,7 +84,7 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   }
   
-  /* MEET AGENTS */
+  /* meet agents */
   .meet-agents {
     margin-top: 3rem;
   }
@@ -98,7 +98,7 @@
     color: #475569;
   }
   
-  /* RESPONSIVE */
+  /* responsive*/
   @media (max-width: 768px) {
     .contact-main {
       grid-template-columns: 1fr;
