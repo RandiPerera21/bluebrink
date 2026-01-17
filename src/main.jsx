@@ -1,13 +1,14 @@
 import "./index.css";
+import React from "react";
 import ReactDOM from "react-dom/client";
-import { HashRouter } from "react-router-dom"; // Changed from BrowserRouter
+import { BrowserRouter } from "react-router-dom"; 
 import App from "./App";
 import { FavouritesProvider } from "./context/FavouritesContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <HashRouter>
-    <FavouritesProvider>
+  <React.StrictMode>
+    <BrowserRouter basename="/bluebrink">
       <App />
-    </FavouritesProvider>
-  </HashRouter>
+    </BrowserRouter>
+  </React.StrictMode>
 );
