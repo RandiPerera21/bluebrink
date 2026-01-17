@@ -5,7 +5,7 @@ export const FavouritesContext = createContext();
 export function FavouritesProvider({ children }) {
   const [favourites, setFavourites] = useState([]);
 
-  // Add property to favourites (prevents duplicates)
+  // Add property to favourites
   const addFavourite = (property) => {
     setFavourites(prev =>
       prev.find(p => p.id === property.id)
