@@ -1,5 +1,5 @@
-import AgentList from "./AgentList";
-import ContactForm from "./ContactForm";
+import AgentList from "../components/AgentList";
+import ContactForm from "../components/ContactForm";
 
 export default function Contact() {
   return (
@@ -8,7 +8,7 @@ export default function Contact() {
       <h1>Contact Us</h1>
       
 
-      {/* CONTACT DETAILS + FORM */}
+      {/* Contact details*/}
       <section className="contact-main">
         <ContactForm />
 
@@ -24,7 +24,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* MEET OUR AGENTS */}
+      {/* Agents */}
       <section className="meet-agents">
         <h2>Meet Our Agents</h2>
         <p>
@@ -37,4 +37,4 @@ export default function Contact() {
 
     </div>
   );
-}
+}      
