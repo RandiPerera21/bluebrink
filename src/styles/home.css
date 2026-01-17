@@ -42,7 +42,7 @@
     box-shadow: 0 15px 35px rgba(0,0,0,0.15);
   }
   
-  /* SERVICES */
+  /* Services */
   .services-section {
     margin: 6rem 0;
   }
@@ -52,7 +52,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
   }
-  
+
   .service-card {
     background: white;
     padding: 2rem;
@@ -81,7 +81,7 @@
     line-height: 1.6;
     font-size:1rem;
   }
-
+  
   @media (max-width: 900px) {
     .home-hero {
       grid-template-columns: 1fr;
@@ -105,4 +105,5 @@
     background: #303ca5;
     color: white;
   }
+  
   
